@@ -159,7 +159,6 @@ class Aggregator(object):
         if sibling_node is not None \
             and node.parent in self.radix_tree \
                 and node.action == sibling_node.action:
-                    node.parent.prefix = node.prefix[0:-1]
                     node.parent.action = node.action
                     node.aggregated = True
                     sibling_node.aggregated = True
