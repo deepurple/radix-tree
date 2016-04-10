@@ -2,7 +2,8 @@
 # coding: utf-8
 
 def ip_to_bin(ip_str):
-    return ''.join([bin(int(x))[2:].rjust(8, '0') for x in ip_str.split('.')])
+    return ''.join([bin(int(x))[2:].rjust(8, '0')
+                    for x in ip_str.split('.')])
 
 def bin_to_ip(bin_str):
     return '.'.join([str(int(bin_str[0:8], 2)),
@@ -11,7 +12,8 @@ def bin_to_ip(bin_str):
                      str(int(bin_str[24:32], 2))])
 
 def ip_is_valid(ip_str):
-    return all(map(lambda x: 0 <= x <= 255, [int(ip) for ip in ip_str.split('.')]))
+    return all(map(lambda x: 0 <= x <= 255,
+                   [int(ip) for ip in ip_str.split('.')]))
 
 def bin_is_valid(bin_str):
     ip_str = bin_to_ip(bin_str)
